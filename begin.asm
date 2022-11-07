@@ -501,7 +501,14 @@ endm
 .code
 
 calculadora PROC
-        
+
+              ;---function to clear the screen---
+                mov ah,0;seting video mode
+                mov al,6;text type
+                int 10h;executing the function
+;function who change the color of the
+                
+
         SIM2:
 
             ;---initializing the data---
