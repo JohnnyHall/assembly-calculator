@@ -19,7 +19,7 @@ TITLE NOME: Giovani Bellini dos Santos, RA: 22007263 | Joao Victor Rokemback Tap
     msg13 db 10,"- - DIVISAO - -",'$', 10
     msg14 db 10,"O resultado da operacao eh:",'$', 10 
     msg15 db 10,"Deseja repetir a conta? (S/N):",'$'  
-    msg16 db 10,"Obrigado por usar a calculator!",'$'
+    msg16 db 10,"Obrigado por usar a calculadora!",'$'
     msg17 db 10,"O resto da divisao eh:",'$', 10
     msg18 db 10,"Invalido, digite tente novamente:",'$'
 
@@ -570,7 +570,7 @@ calculator PROC
                             jmp sim_12
 
                 nao:
-                ;---printing msg16 "Obrigado por usar a calculator"---
+                ;---printing msg16 "Obrigado por usar a calculadora"---
                 mov ah,9
                 mov dx,offset msg16
                 int 21h
