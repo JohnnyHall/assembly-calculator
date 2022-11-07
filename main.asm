@@ -61,7 +61,7 @@ horizontal_line_printer macro x,y,z,c
     mov cx,x
     mov dx,z
     l1:
-        mov ah,0ch 
+        mov ah,0ch ;
         mov al,c
         int 10h
         inc cx
@@ -1202,14 +1202,14 @@ mathematical_resolution proc
 
 	mov cl,operator
 	
-	;---add---
-	cmp cl,'+'
-	jne subtraction
-	mov dx,0
-	add dx,input_value
-	add dx,output_value
-	mov output_value,dx
-	
+	addition:
+		;---add---
+		cmp cl,'+'
+		jne subtraction
+		xor dx, dx
+		add dx,input_value
+		add dx,output_value
+		mov output_value,dx
 	
 	subtraction:
 		;---sub---	
@@ -1275,11 +1275,11 @@ mathematical_resolution proc
 	divide_zero:
 		;easter egg!!!!!!!!!!!!
 
-		character_printer 'o',6,2,01
+		character_printer 'O',6,2,01
 		character_printer 'l',6,3,02
 		character_printer 'a',6,4,03
 		character_printer ',',6,5,04
-		character_printer 'p',6,7,05
+		character_printer 'P',6,7,05
 		character_printer 'a',6,8,06
 		character_printer 'n',6,9,07
 		character_printer 'n',6,10,08
